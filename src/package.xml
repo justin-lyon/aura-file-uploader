@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>FileUploaderAuraService</members>
+        <members>FileUploaderAuraServiceTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>E_Message</members>
+        <members>FileItem</members>
+        <members>FileUploader</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>LightningKit</members>
+        <members>Vendors</members>
+        <name>StaticResource</name>
+    </types>
+    <version>44.0</version>
+</Package>

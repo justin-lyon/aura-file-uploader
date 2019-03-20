@@ -1,0 +1,26 @@
+<aura:component description="FileItem">
+
+	<ltng:require styles="{!join(',',
+			$Resource.Vendors + '/fa/css/all.css')}" />
+
+	<aura:attribute name="file" type="Object" />
+
+	<aura:registerEvent name="trash" type="c:E_Message" />
+
+	<div class="slds-grid">
+
+		<div>
+			<i class="slds-text-color_success fa fa-check"></i>
+		</div>
+
+		<div class="slds-p-horizontal_medium">
+			<ui:outputText value="{!v.file.name}" />
+		</div>
+
+		<div class="slds-col_bump-left">
+			<lightning:button variant="bare" onclick="{!c.clickTrash}" >
+				<i class="slds-text-color_error fa fa-trash"></i>
+			</lightning:button>
+		</div>
+	</div>
+</aura:component>

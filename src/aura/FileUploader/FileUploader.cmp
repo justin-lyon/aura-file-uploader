@@ -1,0 +1,34 @@
+<aura:component description="FileUploader"
+	controller="FileUploaderAuraService" >
+
+	<ltng:require scripts="{!join(',',
+			$Resource.LightningKit + '/js/promisify.js')}" />
+
+	<aura:attribute name="recordId" type="Id" required="true" />
+	<aura:attribute name="files" type="Object[]" default="[]" />
+
+	<aura:attribute name="showSpinner" type="Boolean" default="false" />
+
+	<aura:registerEvent name="fileUploader" type="c:E_Message" />
+	<aura:handler name="trash" event="c:E_Message" action="{!c.handleTrash}" />
+
+	<div class="{!(v.showSpinner ? '' : 'slds-hide')}">
+		<lightning:spinner size="small" />
+	</div>
+
+	<lightning:fileUpload name="fileUploader"
+		label= "Add Attachments"
+		multiple="true"
+		disabled="false"
+		recordId="{!v.recordId}"
+		onuploadfinished="{!c.onUploadFinished}" />
+
+	<ul class="slds-p-top_medium">
+		<aura:iteration var="file" items="{!v.files}" >
+			<li>
+				<c:FileItem file="{!file}" />
+			</li>
+		</aura:iteration>
+	</ul>
+
+</aura:component>
