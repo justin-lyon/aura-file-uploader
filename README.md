@@ -1,6 +1,6 @@
 # aura-file-uploader
 
-This is a file upload wrapper of the `lighting:fileUpload` base component from Salesforce.
+This is a file upload wrapper of the `lightning:fileUpload` base component from Salesforce.
 
 Files are uploaded to the required `recordId` attribute. The `lightning:fileUpload` event `onuploadfinished` is bubbled up with a component event `fileUploader` of type `c:E_Message`. Removing files from the list will refire the event after the files are deleted.
 
